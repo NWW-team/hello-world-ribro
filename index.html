@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World — Vibecoden</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top, #1e293b, var(--bg));
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      padding: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
+
+    button {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #0f172a;
+      font-weight: 600;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+    }
+
+    #output {
+      margin-top: 20px;
+      min-height: 24px;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <span class="badge">Vibecoden</span>
+    <h1>Hello, World! 👋</h1>
+    <p>
+      Dit is een minimale "Hello World"-app, gebouwd om te laten zien
+      hoe vibecoden werkt: kort omschrijven wat je wilt, en het resultaat
+      groeit stap voor stap.
+    </p>
+    <button id="greet-btn">Zeg hallo</button>
+    <div id="output"></div>
+    <footer>Gemaakt met HTML, CSS &amp; een klein beetje JavaScript.</footer>
+  </main>
+
+  <script>
+    const button = document.getElementById("greet-btn");
+    const output = document.getElementById("output");
+    const greetings = [
+      "Hallo daar! 🌍",
+      "Hoi! Leuk dat je er bent.",
+      "Vibecoden voelt goed, toch? ✨",
+      "Hello World, elke keer weer leuk."
+    ];
+
+    button.addEventListener("click", () => {
+      const random = greetings[Math.floor(Math.random() * greetings.length)];
+      output.textContent = random;
+    });
+  </script>
+</body>
+</html>
